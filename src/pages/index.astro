@@ -1,0 +1,48 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Carrousel from "../components/Carrousel.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Form from "../components/Form.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="">
+		<Header />
+		<main class="w-full pt-20">
+			<section class="lg:px-20 flex flex-col lg:flex-row justify-between mb-32">
+				<Experience />
+				<div class="flex flex-col lg:flex-row">
+					<div>
+
+						<h1 class="text-4xl font-bold lg:text-6xl text-center mt-20 lg:mt-0" >Cristian Massa</h1>
+						<p class="md:w-[500px] mr-2">
+							Soy un apasionado de la creación de sitios web dinámicos y
+							funcionales que impulsen el crecimiento de las empresas. Con
+							23 años y experiencia como freelance en proyectos de
+							eCommerce, actualmente formalizo mis estudios en el
+							Instituto Tecnológico Superior.
+						</p>
+					</div>
+					<div>
+						<img width="300" src="../../public/images/cristian.jpg" height="300" alt="hola" />
+					</div>
+				</div>
+			</section>
+			<Projects />
+			<Carrousel />
+			<section class="flex justify-center my-20">
+				<Form />
+			</section>
+		</main>
+		<Footer />
+		
+	</body>
+</html>
