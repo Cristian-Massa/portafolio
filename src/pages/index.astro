@@ -32,6 +32,8 @@ import photo from '../../public/images/cristian.jpg'
 							eCommerce, actualmente formalizo mis estudios en el
 							Instituto Tecnológico Superior.
 						</p>
+						<a class="bg-black text-white hover:text-white p-2 px-8 rounded-lg" href="../../public/pdf/curriculum_web_dev.pdf" download>Cv</a>
+						<button id="scroll" class="bg-black text-white hover:text-white p-2 px-8 rounded-lg">Información de contacto</button>
 					</div>
 					<div>
 						<Image width="300" src={photo} height="300" alt="hola" />
@@ -48,3 +50,15 @@ import photo from '../../public/images/cristian.jpg'
 		
 	</body>
 </html>
+
+
+<script>
+	const scroll = document.getElementById('scroll')
+	const info = document.getElementById('info')?.offsetTop
+	scroll?.addEventListener('click', ()=>{
+		window.scroll({
+			top: info,
+			behavior: "smooth"
+		})
+	})
+</script>
