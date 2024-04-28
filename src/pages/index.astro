@@ -9,6 +9,7 @@ import Projects from "../components/Projects.astro";
 import Form from "../components/Form.astro";
 import { Image } from "astro:assets";
 import photo from '../../public/images/cristian.jpg'
+import pdf from '../../public/pdf/curriculum_web_dev.pdf'
 ---
 
 <!doctype html>
@@ -32,7 +33,7 @@ import photo from '../../public/images/cristian.jpg'
 							eCommerce, actualmente formalizo mis estudios en el
 							Instituto Tecnológico Superior.
 						</p>
-						<a class="bg-black text-white hover:text-white p-2 px-8 rounded-lg" href="../../public/pdf/curriculum_web_dev.pdf" download>Cv</a>
+						<a class="bg-black text-white hover:text-white p-2 px-8 rounded-lg" href={pdf} download>Cv</a>
 						<button id="scroll" class="bg-black text-white hover:text-white p-1 px-8 rounded-lg">Información de contacto</button>
 					</div>
 					<div>
