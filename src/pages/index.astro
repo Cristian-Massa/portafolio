@@ -26,15 +26,17 @@ import pdf from '../../public/pdf/curriculum_web_dev.pdf'
 					<div class="mb-2">
 
 						<h1 class="text-4xl font-bold lg:text-6xl text-center mt-20 lg:mt-0" >Cristian Massa</h1>
-						<p class="md:w-[500px] mr-2">
+						<p class="text-center md:w-[500px] mr-2">
 							Soy un apasionado de la creación de sitios web dinámicos y
 							funcionales que impulsen el crecimiento de las empresas. Con
 							23 años y experiencia como freelance en proyectos de
 							eCommerce, actualmente formalizo mis estudios en el
 							Instituto Tecnológico Superior.
 						</p>
-						<a class="bg-black text-white hover:text-white p-2 px-8 rounded-lg" href={pdf} download>Cv</a>
-						<button id="scroll" class="bg-black text-white hover:text-white p-1 px-8 rounded-lg">Información de contacto</button>
+						<div class="flex gap-2 flex-col md:flex-row justify-center text-center">
+							<a class="bg-black w-14 place-self-center text-white hover:text-white p-1  rounded-lg" href={pdf} download>Cv</a>
+							<button id="scroll" class="min-w-40 place-self-center bg-black text-white hover:text-white p-1 px-8 rounded-lg">Información de contacto</button>
+						</div>
 					</div>
 					<div>
 						<Image width="300" src={photo} height="300" alt="hola" />
@@ -55,11 +57,14 @@ import pdf from '../../public/pdf/curriculum_web_dev.pdf'
 
 <script>
 	const scroll = document.getElementById('scroll')
-	const info = document.getElementById('info')?.offsetTop
+	const infoTop = document.getElementById('info')?.offsetTop
+	const infoHeight = document.getElementById('info')?.offsetHeight
 	scroll?.addEventListener('click', ()=>{
-		window.scroll({
-			top: info,
+		if(infoTop && infoHeight){
+			window.scroll({
+			top: infoTop + infoHeight,
 			behavior: "smooth"
 		})
+		}
 	})
 </script>

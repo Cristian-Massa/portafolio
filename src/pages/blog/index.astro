@@ -15,7 +15,7 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
+		<!-- <style>
 			main {
 				width: 960px;
 			}
@@ -83,20 +83,24 @@ const posts = (await getCollection('blog')).sort(
 					font-size: 1.563em;
 				}
 			}
-		</style>
+		</style> -->
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section>
+		<main class="flex flex-col place-items-center justify-center">
+			<div class="py-6">
+				<h1 class="font-bold text-4xl text-center m-6">Blog Personal</h1>
+				<p class="max-w-[600px] text-gray-600 text-center">Te interesa crear sitios web y deseas profundizar en HTML, CSS y JavaScript? ¡Este blog es para ti! Aquí encontrarás una variedad de tutoriales y recursos para iniciarte en el mundo del desarrollo web o para mejorar tus habilidades.</p>
+			</div>
+			<section class="bg-gray-100 w-full py-6 min-h-screen flex flex-col md:flex-row">
 				<ul>
 					{
 						posts.map((post) => (
-							<li>
+							<li class="shadow-2xl p-10 rounded-xl shadow-gray-500">
 								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<img  class="rounded-lg" width={400} height={300} src={post.data.heroImage} alt="" />
+									<h4 class="font-bold text-center">{post.data.title}</h4>
+									<p class="text-gray-500 text-center">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>

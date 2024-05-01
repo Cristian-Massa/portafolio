@@ -9,9 +9,9 @@ import {data} from '../content/exprerience/experience.json'
     {data.map(element =>{
         return(
             <details >
-                <summary class="cursor-pointer">{element.title}</summary>
+                <summary class="cursor-pointer ">{element.title}</summary>
                 <p class="md:w-[400px]">{element.description}</p>
-                <p>Modalidad: {element.modality}</p>
+                <p class="m-2">Modalidad: {element.modality}</p>
                 <a class="rounded-lg bg-black p-2 text-white hover:bg-white hover:text-black transition-colors duration-100 hover:shadow-2xl shadow-gray-700" href={element.link}>Ver el proyecto</a>
             </details>
             )
